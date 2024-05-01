@@ -1,0 +1,53 @@
+Cross origin : 
+    Cross-origin refers to a situation where a web page tries to fetch resources 
+    (like scripts, stylesheets, or data) from a different origin (domain, protocol, 
+    or port) than the one it's currently on. Browsers typically restrict such 
+    requests due to security concerns, a policy known as the Same-Origin Policy.
+
+Example for cross origin : 
+    1.  Let's consider an example scenario involving a real-time web application 
+        like Amazon or Flipkart to illustrate cross-origin requests.
+    2.  Suppose you're building an online shopping website similar to 
+        Amazon or Flipkart. Your website's frontend is hosted at 
+        https://www.example.com, and you want to integrate product reviews from a 
+        third-party service called ReviewHub, which is hosted at 
+        https://reviewhub.com.
+
+    3.  In this scenario, your website's frontend (https://www.example.com) needs to 
+        make requests to ReviewHub's API (https://reviewhub.com/api/reviews) to fetch 
+        product reviews and display them to users.
+
+    Here's how cross-origin requests come into play:
+
+    4.  Cross-Origin Request: When your website's frontend makes a request to 
+    ReviewHub's API (https://reviewhub.com/api/reviews), it's considered a 
+    cross-origin request because it's going from one domain (www.example.com) to 
+    another domain (reviewhub.com).
+
+    5.  Browser Security Restrictions: Browsers enforce the Same-Origin Policy, which
+        restricts cross-origin requests by default to prevent unauthorized access to 
+        resources. If your website tries to make a cross-origin request to ReviewHub's
+        API without proper permissions, the browser will block the request for 
+        security reasons.
+
+    6.  CORS Headers: To allow your website to make cross-origin requests to ReviewHub
+        -'s API, ReviewHub's server needs to include specific CORS (Cross-Origin 
+        Resource Sharing) headers in its responses. These headers indicate to the 
+        browser that cross-origin requests from your website are allowed.
+
+    7.  Example Headers: ReviewHub's server might include the following CORS headers 
+        in its responses to allow cross-origin requests from https://www.example.com:
+        makefile
+        Copy code
+        1.  Access-Control-Allow-Origin: https://www.example.com
+        2.  Access-Control-Allow-Methods: GET, POST, OPTIONS
+        3.  Access-Control-Allow-Headers: Content-Type
+        4.  Successful Integration: With the appropriate CORS headers in place, the 
+            browser will allow your website (https://www.example.com) to fetch product 
+            reviews from ReviewHub's API (https://reviewhub.com/api/reviews) without 
+            being blocked by the Same-Origin Policy. Your website can then display 
+            the product reviews to users seamlessly.
+
+
+OFFICIAL NOTES FOR EPISODE 1 : 
+        'https://namastedev.com/learn/namaste-react/episode-01-inception-notes'
