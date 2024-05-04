@@ -1,0 +1,178 @@
+NPM : 
+      1.  While npm is commonly known as "Node Package Manager," it's technically a recursive acronym for 
+          "npm is not an acronym. It's a package manager for JavaScript."
+
+      2.  npm is a package manager for JavaScript, primarily used with Node.js runtime environments. 
+          It's one of the most widely used package managers in the JavaScript ecosystem and serves several 
+          purposes:
+
+                1.  Dependency Management:  npm allows developers to define and manage dependencies for their 
+                                            JavaScript projects. Developers can specify project dependencies, 
+                                            including libraries, frameworks, and tools, in a package.json file,
+                                            and npm handles the installation and management of these dependencies.
+                2.  Package Distribution:   npm provides a platform for developers to publish and distribute their 
+                                            JavaScript packages to the broader community. Developers can publish 
+                                            their packages to the npm registry, making them accessible to other 
+                                            developers worldwide.
+                3.  Command-Line Interface: npm provides a command-line interface (CLI) that developers can use 
+                                            to perform various tasks, such as installing packages, updating 
+                                            dependencies, publishing packages, and running scripts defined in the 
+                                            package.json file.
+                4.  Scripts Execution:      npm allows developers to define custom scripts in the package.json 
+                                            file and execute them using the npm run command. This feature is 
+                                            often used for tasks such as building, testing, linting, and 
+                                            deploying JavaScript applications.
+                5.  Version Management:     npm provides tools for managing package versions, including semantic 
+                                            versioning (semver) and version range operators. Developers can 
+                                            specify version constraints for dependencies to ensure compatibility 
+                                            and manage updates effectively.
+
+      3.  Overall, npm plays a crucial role in the JavaScript ecosystem by facilitating package management, distribution, and development workflows for JavaScript projects. It's an essential tool for developers building applications, libraries, and tools using JavaScript and Node.js.
+
+
+PACKAGE-JSON :   
+      1.  package.json is a configuration of npm..it is the details which we get when we fill some questions when
+          we do npm installation anf it keeps the track of what version of that package is insalled in the 
+          system
+      2.  package.json is a metadata file for your project that contains various information such as project name,
+          version, description, author, dependencies, and scripts.
+      3.  It lists all the dependencies (both regular dependencies and development dependencies) required by your 
+          project.
+      4.  You can manually edit this file to add or remove dependencies, update versions, or specify scripts for 
+          tasks like building, testing, and running your application.
+
+
+PACKAGE-LOCK-JSON : 
+      1.  package.lock-json keeps the track of exact version of packages which are installed in the system
+      2.  package-lock.json is an automatically generated file that locks the dependencies and their versions 
+          installed in your project.
+      3.  It ensures that subsequent installations of dependencies will be deterministic and reproduce the exact 
+          dependency tree installed initially.
+      4.  It includes information about each dependency's version, resolved URL, and integrity hash to ensure 
+          consistent installations across different environments and machines.
+
+
+(EXAMPLE OF PACKAGE.JSON) :
+
+    package.json : 
+      {
+      "name": "MyApp",
+      "version": "1.0.0",
+      "description": "A sample Node.js project",
+      "main": "index.js",
+      "scripts": {
+        "start": "parcel index.html"
+      },
+      "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+      },
+      "devDependencies": {
+        "parcel": "^2.0.0"
+      }
+    }
+
+(EXAMPLE OF PACKAGE-LOCK.JSON) :
+
+      package-lock.json :
+          "parcel": {
+        "version": "2.0.0",
+        "resolved": "https://registry.npmjs.org/parcel/-/parcel-2.0.0.tgz",
+        "integrity": "<integrity hash>",
+        "dev": true
+      }
+
+
+NODE MODULES : 
+      1.  (collection of dependencies, Every dependency in node_module will have its package.json)
+      2.  When you run npm install or npm install -D parcel, npm creates the node_modules directory and installs 
+          the specified dependencies and their transitive dependencies.
+      3.  Inside the node_modules directory, you'll find folders for each installed dependency, including both 
+          regular dependencies (react, react-dom) and development dependencies (parcel).
+
+INTEGRITY : 
+      1.  Exactly! Integrity checks, facilitated by `package-lock.json`, help prevent scenarios where a project 
+          works on one environment (e.g., local development) but fails in another (e.g., production). By ensuring 
+          that the exact same versions of dependencies are installed in all environments, you minimize the risk 
+          of discrepancies caused by differences in dependency versions or unexpected modifications to packages.
+
+      2.  This consistency across environments leads to more predictable behavior and reduces the likelihood of 
+          "it works on my machine" situations. It helps developers maintain confidence in the reliability and 
+          stability of their applications as they move from development to testing to production environments.
+
+TRANSITIVE DEPENDENCIES :
+      1.  Transitive dependencies are dependencies that are required by other dependencies in your project. In 
+          other words, if your project depends on a package A, and package A depends on package B, then package B 
+          is a transitive dependency of your project.
+
+
+GIT IGNORE : 
+      1.  .gitignore is a configuration file used by Git to specify files and directories that should be ignored 
+          and not tracked by version control. When you add a file or directory to .gitignore, Git will exclude 
+          them from being staged, committed, and pushed to the remote repository.
+      2.  (we're ignoring node_modules now since those were regenrated dynamiclly from package.json so there is 
+          nom point of tracking that one.)
+
+NPX : 
+      1.  npx:  npx is a package runner tool that comes with npm. It's used to execute packages from the npm 
+                registry without having to install them globally. When you run npx parcel, it automatically 
+                installs Parcel locally (if it's not already installed) and then executes it.
+
+
+      Exactly! `npx` is a tool that allows you to execute packages that are installed via npm without having to 
+      install them globally or add them to your project's dependencies. It's particularly useful for running 
+      packages that you only need to use occasionally or for one-off tasks.
+
+      Here's how it works:
+
+      1. **Execute Local Packages**:  If you have a package installed locally in your project's `node_modules` 
+                                      directory (e.g., Parcel), you can use `npx` to execute it by simply 
+                                      providing the package name (e.g., `npx parcel`).
+
+      2. **Install and Execute**:     If the package is not installed locally in your project, `npx` will 
+                                      automatically install it (if available in the npm registry) and then 
+                                      execute it. This ensures that you're always using the latest version of 
+                                      the package, even if it's not installed globally or listed in your 
+                                      project's dependencies.
+
+      3. **Avoid Global Installs**:   `npx` helps avoid the need for globally installing packages, which can lead 
+                                      to version conflicts and pollute your global npm environment with 
+                                      unnecessary dependencies. Instead, it allows you to use packages on a 
+                                      per-project basis without affecting other projects or the global 
+                                      environment.
+
+      Overall, `npx` simplifies the process of running packages from the npm registry, making it easier to 
+      execute commands and perform tasks using a wide range of tools and utilities available in the JavaScript 
+      ecosystem.
+
+
+PARCEL : 
+      1.  As mentioned earlier, Parcel is a web application bundler that analyzes your project's dependencies and 
+          bundles them into optimized bundles.
+
+
+When you run npx parcel index.html, Parcel does the following:
+
+It reads the index.html file to determine the entry point of your application.
+It analyzes the dependencies referenced in index.html (e.g., JavaScript files, CSS files, images).
+It bundles these dependencies and their dependencies (if any) into a production-ready bundle.
+It starts a local development server to serve your application, allowing you to preview it in your web browser.
+If Parcel detects changes in your source files, it automatically rebuilds the bundles and updates the browser with the changes using hot module replacement (HMR), providing a fast and efficient development experience.
+In summary, npm parcel index.html is a convenient way to use Parcel to bundle and serve your web application, starting from the specified index.html file, and providing a streamlined development workflow with features like automatic dependency resolution and hot module replacement.
+
+TYPE=MODEULE : 
+      we're giving type="module" here to make sure to undertsnd that out js file is not browser script...
+      why?...browser script cannot understand import statements but we need to import react over there from 
+      node modules and if we not given type means then it will throw an issue 
+      "<script type="module" src="./app.js"></script>"
+
+BROWSER-LIST :
+
+      browser-list is a thing from which we can see like how many we're using updated chrome versions or last 2 
+      version(all engines)
+
+
+
+
+OFFICIAL NOTES FOR EPISODE 2 :
+          'https://namastedev.com/learn/namaste-react/episode-02-igniting-our-app-notes'
