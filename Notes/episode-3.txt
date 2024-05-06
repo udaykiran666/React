@@ -88,4 +88,5 @@
     so that attcker can access our ssession storage, cookies etc..since we're using the jsx..
     it will take care of that attack like it will escape the attack some how.
 
-8. let's
+OFFICIAL NOTES FOR EPISODE 3 :
+            'https://namastedev.com/learn/namaste-react/episode-03-laying-the-foundation-notes'
