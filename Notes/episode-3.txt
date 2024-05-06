@@ -1,0 +1,91 @@
+1. jsx is not an html...jsx is different and html is different and react is different..
+2.  some xamples of jsx : 
+                    // JSX tags representing HTML elements
+                    const heading = <h1>Hello, World!</h1>;
+                    const paragraph = <p>This is a paragraph.</p>;
+                    const div = <div>This is a div.</div>;
+                    const span = <span>This is a span.</span>;
+
+                    // JSX tags with attributes
+                    const link = <a href="https://example.com">Visit Example</a>;
+                    const image = <img src="image.jpg" alt="Example Image" />;
+
+                    // JSX tags with dynamic content
+                    const name = "John";
+                    const greeting = <p>Hello, {name}!</p>;
+
+                    // JSX tags with nested elements
+                    const list = (
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                    );
+
+                    // JSX tags with conditional rendering
+                    const isLoggedIn = true;
+                    const greeting = isLoggedIn ? <p>Welcome back!</p> : <p>Please log in.</p>;
+
+                    // JSX tags with event handlers
+                    const handleClick = () => {
+                    console.log("Button clicked!");
+                    };
+                    const button = <button onClick={handleClick}>Click me</button>;
+
+                    // JSX tags with class names
+                    const className = "highlight";
+                    const highlightedText = <p className={className}>Highlighted text</p>;
+
+                    // JSX tags with inline styles
+                    const styles = { color: "blue", fontSize: "20px" };
+                    const styledText = <p style={styles}>Styled text</p>;
+
+3.  Babel is a toolchain that is mainly used to convert ECMAScript 2015+ (ES6+) code into a 
+    backwards-compatible version of JavaScript in current and older browsers or environments. 
+    It allows developers to use the latest JavaScript syntax and features, even if they are 
+    not supported by all browsers.
+
+    When it comes to JSX, Babel plays a crucial role in transforming JSX syntax into regular 
+    JavaScript that browsers can understand. JSX is a syntax extension for JavaScript that 
+    allows you to write HTML-like code directly within your JavaScript files, making it 
+    easier to create React components and user interfaces.
+
+    Here's how Babel helps with JSX:
+
+            1. **Parsing**: Babel parses JSX syntax, recognizing JSX elements and their 
+                attributes within JavaScript code.
+
+            2. **Transformation**: Babel transforms JSX syntax into function calls that 
+                create React elements. For example, `<div>Hello</div>` is transformed into 
+                `React.createElement('div', null, 'Hello')`.
+
+            3. **Compatibility**: Babel ensures that the transformed code is compatible with 
+                all browsers by converting modern JavaScript features into older, widely 
+                supported syntax.
+
+            4. **Integration**: Babel can be integrated into various build tools and 
+                development workflows, such as webpack, Rollup, or standalone usage via the 
+                command line. This allows developers to seamlessly incorporate JSX into their
+                projects without worrying about browser compatibility issues.
+
+            Overall, Babel's ability to transform JSX syntax into standard JavaScript code is 
+            essential for building React applications that can run efficiently across different 
+            environments and browsers. It enables developers to leverage the power and 
+            simplicity of JSX while ensuring broad compatibility with modern web standards.
+
+4.  at the end of day jsx thins is js object i.e. react element..
+
+5.  there are 2 types of comoponents 
+        1. class based component (old way-->no body uses it)
+        2. functional component (new way)
+
+6.  writing component inside another component is call component compositio.
+
+7.  let's say we have react element and in that we're getting any api like (api.getData()) and then
+    we're using that react element in one of our component..if we assume that the api is
+    containing the malicious react element(javascript code) so we're using that in component 
+    so that attcker can access our ssession storage, cookies etc..since we're using the jsx..
+    it will take care of that attack like it will escape the attack some how.
+
+8. let's
